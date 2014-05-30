@@ -1,0 +1,25 @@
+<html>
+<title>Payment Service</title>
+<head><h1 align="center">Payment Services</h1></head>
+
+<form action="/test/payment/auth">
+<table align="center">
+<tr>
+<td>Paste the request here</td>
+</tr>
+<tr>
+<td><textarea id="request" name="request" rows="10"></textarea></td>
+<td><input type="text" id="request1"/></td>
+</tr>
+<tr>
+<td><input type="button" value="Authorize Card" onclick="authOnly()"/></td>	
+</tr>
+</table>
+</form>
+<script>
+function authOnly() {
+var req = document.elementById("request").value;
+alert(req);
+}
+</script>
+</html>
