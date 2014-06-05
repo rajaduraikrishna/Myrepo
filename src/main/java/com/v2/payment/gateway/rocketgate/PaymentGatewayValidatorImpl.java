@@ -5,7 +5,7 @@ package com.v2.payment.gateway.rocketgate;
 
 import com.v2.payment.ValidationException;
 import com.v2.payment.gateway.PaymentGatewayValidator;
-import com.v2.payment.vo.Payment;
+import com.v2.payment.vo.PaymentGatewayRequest;
 
 /**
  * @author rajadurai
@@ -19,7 +19,7 @@ public class PaymentGatewayValidatorImpl implements PaymentGatewayValidator {
 	 * @see com.v2.payment.gateway.PaymentGatewayValidator#validateRequest(com.v2.payment.vo.Payment)
 	 */
 	@Override
-	public boolean validateRequest(Payment aPayment) throws ValidationException {
+	public boolean validateRequest(PaymentGatewayRequest aPayment) throws ValidationException {
 		boolean isValid = true;
 		if(aPayment != null) {
 			if (aPayment.getCardNumber() == null || EMPTY.equals(aPayment.getCardNumber())) {

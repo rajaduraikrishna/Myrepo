@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import com.v2.payment.ValidationException;
 import com.v2.payment.gateway.PaymentGatewayValidator;
-import com.v2.payment.vo.Payment;
+import com.v2.payment.vo.PaymentGatewayRequest;
 
 /**
  * @author rajadurai
@@ -20,16 +20,16 @@ import com.v2.payment.vo.Payment;
 public class PaymentGatewayValidatorImplTest {
 
 	PaymentGatewayValidator validator;
-	Payment aPayment;
+	PaymentGatewayRequest aPayment;
 	/**
 	 * setup method
 	 */
 	@Before public void setup() {
 		validator = new PaymentGatewayValidatorImpl();
-		aPayment = new Payment();
+		aPayment = new PaymentGatewayRequest();
 	}
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 */
 	@Test
 	public void testValidateRequest() {
@@ -49,7 +49,7 @@ public class PaymentGatewayValidatorImplTest {
 	}
 
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test
@@ -60,7 +60,7 @@ public class PaymentGatewayValidatorImplTest {
 	}
 
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test
@@ -70,7 +70,7 @@ public class PaymentGatewayValidatorImplTest {
 	}
 
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test
@@ -83,7 +83,7 @@ public class PaymentGatewayValidatorImplTest {
 		validator.validateRequest(aPayment);
 	}
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test
@@ -97,7 +97,7 @@ public class PaymentGatewayValidatorImplTest {
 		validator.validateRequest(aPayment);
 	}
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test
@@ -110,7 +110,7 @@ public class PaymentGatewayValidatorImplTest {
 		validator.validateRequest(aPayment);
 	}
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test
@@ -124,7 +124,7 @@ public class PaymentGatewayValidatorImplTest {
 		validator.validateRequest(aPayment);
 	}
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test
@@ -138,7 +138,7 @@ public class PaymentGatewayValidatorImplTest {
 	}
 
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 * @throws Exception 
 	 */
 	@Test

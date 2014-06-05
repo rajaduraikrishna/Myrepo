@@ -3,7 +3,7 @@
  */
 package com.v2.payment.gateway;
 
-import com.v2.payment.vo.Payment;
+import com.v2.payment.vo.PaymentGatewayRequest;
 import com.v2.payment.vo.PaymentGatewayResponse;
 
 /**
@@ -17,5 +17,12 @@ public interface PaymentGateway {
 	/**
 	 * payment gateway method to authorize the card
 	 */
-	public PaymentGatewayResponse authCard(Payment paymentDetails);
+	public PaymentGatewayResponse authCard(PaymentGatewayRequest paymentGatewayRequest);
+
+	/**
+	 * Makes purchase on the card
+	 * @param paymentDetails 
+	 * @return
+	 */
+	public PaymentGatewayResponse purchase(PaymentGatewayRequest paymentGatewayRequest);
 }

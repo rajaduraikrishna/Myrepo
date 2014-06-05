@@ -3,12 +3,18 @@
  */
 package com.v2.payment.gateway.rocketgate;
 
+import static org.junit.Assert.assertNotNull;
+
+import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
+import org.powermock.api.easymock.PowerMock;
 
+import com.rocketgate.client.GatewayRequest;
+import com.rocketgate.client.GatewayResponse;
 import com.rocketgate.client.GatewayService;
-import com.v2.payment.gateway.PaymentGateway;
-import com.v2.payment.vo.Payment;
+import com.v2.payment.vo.PaymentGatewayRequest;
+import com.v2.payment.vo.PaymentGatewayResponse;
 
 /**
  * @author rajadurai
@@ -24,15 +30,33 @@ public class PaymentGatewayImplTest {
 	}
 
 	/**
-	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayImpl#authCard(com.v2.payment.vo.Payment)}.
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayImpl#authCard(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 */
 	@Test
 	public void testAuthCard() {
-		GatewayService service = Easymock.createMock(GatewayService.class);
+		GatewayService service = PowerMock.createMock(GatewayService.class);
+		EasyMock.expect(service.PerformAuthOnly(EasyMock.isA(GatewayRequest.class), EasyMock.isA(GatewayResponse.class))).andReturn(true);
 		PaymentGatewayImpl gateway = new PaymentGatewayImpl();
 		gateway.setService(service);
-		Payment aPayment = new Payment();
-		gateway.authCard(aPayment );
+		PaymentGatewayRequest payment = new PaymentGatewayRequest();
+		payment.setAmount(10.97);
+		payment.setCardNumber("5555555555554444");
+		payment.setExpiryMonth(8);
+		payment.setExpiryYear(2015);
+		payment.setCvv2(1234);
+		payment.setCustomerFirstName("Raja");
+		payment.setCustomerLastName("Durai");
+		payment.setCustomerEmail("k.rajadurai@gmail.com");
+		payment.setCustomerPhone("9886325224");
+		payment.setBillingAddress("123 Main st");
+		payment.setBillingCity("Las Vegas");
+		payment.setBillingState("Nevada");
+		payment.setBillingPostalCode("89141");
+		payment.setBillingCountry("US");
+//		PowerMock.exp
+		PaymentGatewayResponse response = gateway.authCard(payment );
+		assertNotNull(response);
+		assertNotNull(response.getTransactionId());
 	}
 
 }

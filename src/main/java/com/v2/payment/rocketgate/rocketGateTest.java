@@ -4,7 +4,7 @@
 package com.v2.payment.rocketgate;
 
 import com.v2.payment.gateway.rocketgate.PaymentGatewayImpl;
-import com.v2.payment.vo.Payment;
+import com.v2.payment.vo.PaymentGatewayRequest;
 
 /**
  * @author Rajasundar
@@ -16,7 +16,7 @@ public class rocketGateTest {
 		//
 //			Fill in the fields of the gateway request.
 		//
-		  Payment payment = new Payment();
+		  PaymentGatewayRequest payment = new PaymentGatewayRequest();
 		  payment.setAmount(10.97);
 		  payment.setCardNumber("5555555555554444");
 		  payment.setExpiryMonth(8);

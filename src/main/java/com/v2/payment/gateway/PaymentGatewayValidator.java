@@ -4,7 +4,7 @@
 package com.v2.payment.gateway;
 
 import com.v2.payment.ValidationException;
-import com.v2.payment.vo.Payment;
+import com.v2.payment.vo.PaymentGatewayRequest;
 
 /**
  * @author rajadurai
@@ -17,5 +17,5 @@ public interface PaymentGatewayValidator {
 	 * @return boolean 
 	 * @throws validation Error in case of any validation issues
 	 */
-	public boolean validateRequest(Payment aPayment) throws ValidationException;
+	public boolean validateRequest(PaymentGatewayRequest aPayment) throws ValidationException;
 }

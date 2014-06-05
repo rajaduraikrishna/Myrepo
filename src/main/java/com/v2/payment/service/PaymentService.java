@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.v2.payment.gateway.PaymentGateway;
-import com.v2.payment.vo.Payment;
+import com.v2.payment.vo.PaymentGatewayRequest;
 import com.v2.payment.vo.PaymentGatewayResponse;
 
 /**
@@ -32,9 +32,16 @@ public class PaymentService {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/auth")
-	public Response authOnly(Payment paymentDetails) {
-		System.out.println("Auth method start....");
+	public Response authOnly(PaymentGatewayRequest paymentDetails) {
 		PaymentGatewayResponse response = paymentGateway.authCard(paymentDetails );
+		return Response.status(200).entity(response).build();
+	}
+	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/authAndCapture")
+	public Response authAndCApture(PaymentGatewayRequest paymentDetails) {
+		PaymentGatewayResponse response = paymentGateway.purchase(paymentDetails );
 		return Response.status(200).entity(response).build();
 	}
 }
