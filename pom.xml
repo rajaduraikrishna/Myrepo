@@ -263,11 +263,9 @@
 	<dependencies>
 
 <dependency>
-   <groupId>rocketgateclient</groupId>
-   <artifactId>javaclient</artifactId>
-   <version>1.0</version>
-   <scope>system</scope>
-   <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/GatewayClient.jar</systemPath>
+  <groupId>com.rocketgate</groupId>
+  <artifactId>javaclient</artifactId>
+  <version>1.0</version>
 </dependency>
 		<!-- Spring dependencies -->
 		<dependency>

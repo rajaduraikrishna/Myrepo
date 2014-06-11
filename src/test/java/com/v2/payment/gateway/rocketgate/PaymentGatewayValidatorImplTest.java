@@ -3,6 +3,8 @@
  */
 package com.v2.payment.gateway.rocketgate;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -28,6 +30,25 @@ public class PaymentGatewayValidatorImplTest {
 		validator = new PaymentGatewayValidatorImpl();
 		aPayment = new PaymentGatewayRequest();
 	}
+
+	/**
+	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
+	 */
+	@Test
+	public void testValidateRequestObjectNull() {
+		aPayment = null;
+		boolean isValid = false;
+		try {
+			isValid = validator.validateRequest(aPayment);
+		} catch (ValidationException e) {
+			assertEquals("100", e.getErrorCode());
+			assertEquals("Request is null", e.getErrorMsg());
+		}
+		assertFalse(isValid);
+	}
+
+	
+	
 	/**
 	 * Test method for {@link com.v2.payment.gateway.rocketgate.PaymentGatewayValidatorImpl#validateRequest(com.v2.payment.vo.PaymentGatewayRequest)}.
 	 */

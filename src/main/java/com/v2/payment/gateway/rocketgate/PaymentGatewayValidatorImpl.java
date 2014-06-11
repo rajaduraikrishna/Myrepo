@@ -38,7 +38,7 @@ public class PaymentGatewayValidatorImpl implements PaymentGatewayValidator {
 				throw new ValidationException("100", "Currency cannot be null");
 			}
 		} else {
-			isValid = false;
+			throw new ValidationException("100", "Request is null");
 		}
 		return isValid;
 	}

@@ -54,27 +54,9 @@ public class PaymentGatewayImpl implements PaymentGateway {
 	    if (getService().PerformPurchase(request, response)) {
 	    	createSuccessResponse(gatewayResponse, response);
 	    	
-	      System.out.println("Transaction succeeded");
-	      System.out.println("Response Code: "
-				 + response.Get(GatewayResponse.RESPONSE_CODE));
-	      System.out.println("Reason Code: "
-				 + response.Get(GatewayResponse.REASON_CODE));
-	      System.out.println("Auth No: "
-				 + response.Get(GatewayResponse.AUTH_NO));
-	      System.out.println("AVS: " + response.Get(GatewayResponse.AVS_RESPONSE));
-	      System.out.println("CVV2: " + response.Get(GatewayResponse.CVV2_CODE));
-	      System.out.println("GUID: " + response.Get(GatewayResponse.TRANSACT_ID));
-	      System.out.println("Account: " + response.Get(GatewayResponse.MERCHANT_ACCOUNT));
 	    } else {
 
 	    	createErrorResponse(gatewayResponse, response);
-	      System.out.println("Transaction failed");
-	      System.out.println("Response Code: "
-				 + response.Get(GatewayResponse.RESPONSE_CODE));
-	      System.out.println("Reason Code: "
-				 + response.Get(GatewayResponse.REASON_CODE));
-	      System.out.println("Exception: "
-				 + response.Get(GatewayResponse.EXCEPTION));
 	    }
 	  
 		return gatewayResponse;
