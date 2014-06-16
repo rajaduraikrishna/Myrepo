@@ -6,7 +6,13 @@
   <packaging>war</packaging>
   <name>PaymentService</name>
   <description>Service for payment related apis</description>
-  
+<repositories>
+	<repository>
+		<id>v2cigs</id>
+		<name>v2cigs nexus</name>
+		<url>http://184.106.87.83:8081/nexus/content/repositories/thirdparty/</url>
+	</repository>
+</repositories>  
   	<properties>
 		<test.version>1.0</test.version>
 		<java.version>1.7</java.version>
@@ -21,9 +27,10 @@
 		<cobertura.maven.plugin.version>2.5.1</cobertura.maven.plugin.version>
     	<powermock.version>1.5.5</powermock.version>
 	</properties>
-
 	<build>
 		<finalName>payment</finalName>
+
+		
 		<plugins>
 
 			<plugin>
@@ -261,11 +268,11 @@
 
 	<dependencies>
 
-<dependency>
-  <groupId>com.rocketgate</groupId>
-  <artifactId>javaclient</artifactId>
-  <version>1.0</version>
-</dependency>
+		<dependency>
+		  <groupId>com.rocketgate</groupId>
+		  <artifactId>javaclient</artifactId>
+		  <version>1.0</version>
+		</dependency>
 		<!-- Spring dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
