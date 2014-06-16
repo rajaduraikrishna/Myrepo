@@ -10,10 +10,10 @@
 <repositories>
 	<repository>
 		<id>v2cigs</id>
-		<name>v2cigs nexus</name>
+		<name>v2 repo</name>
 		<url>http://10.223.192.81:8081/nexus/content/repositories/thirdparty/</url>
 	</repository>
-</repositories>  
+</repositories>
 
   	<properties>
 		<test.version>1.0</test.version>
