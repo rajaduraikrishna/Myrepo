@@ -6,6 +6,7 @@
   <packaging>war</packaging>
   <name>PaymentService</name>
   <description>Service for payment related apis</description>
+<<<<<<< HEAD
 
 <repositories>
 	<repository>
@@ -15,6 +16,15 @@
 	</repository>
 </repositories>
 
+=======
+<repositories>
+	<repository>
+		<id>v2cigs</id>
+		<name>v2cigs nexus</name>
+		<url>http://184.106.87.83:8081/nexus/content/repositories/thirdparty/</url>
+	</repository>
+</repositories>  
+>>>>>>> origin/master
   	<properties>
 		<test.version>1.0</test.version>
 		<java.version>1.7</java.version>
