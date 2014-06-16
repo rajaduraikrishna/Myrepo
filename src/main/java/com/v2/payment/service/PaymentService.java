@@ -6,6 +6,7 @@ package com.v2.payment.service;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -23,7 +24,7 @@ import com.v2.payment.vo.PaymentGatewayResponse;
  *
  */
 @Component
-@Path("/payment")
+@Path("/")
 public class PaymentService {
 
 	@Autowired
@@ -31,14 +32,18 @@ public class PaymentService {
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/auth")
 	public Response authOnly(PaymentGatewayRequest paymentDetails) {
+		System.out.println("Calling Auth...");
 		PaymentGatewayResponse response = paymentGateway.authCard(paymentDetails );
+		System.out.println("Response from rocketgate ....:" + response);
 		return Response.status(200).entity(response).build();
 	}
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/authAndCapture")
 	public Response authAndCApture(PaymentGatewayRequest paymentDetails) {
 		PaymentGatewayResponse response = paymentGateway.purchase(paymentDetails );

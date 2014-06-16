@@ -33,9 +33,12 @@ public class PaymentGatewayImpl implements PaymentGateway {
 	    getService().SetTestMode(aPaymentGatewayRequest.isTestMode());
 
 	    if (getService().PerformAuthOnly(request, response)) {
+	    	System.out.println("Auth success....");
 	    	createSuccessResponse(gatewayResponse, response);
+	    	System.out.println("Auth success....response: " + response);
 	    } else {
 	    	createErrorResponse(gatewayResponse, response);
+	    	System.out.println("Auth failure....response: " + response);
 	    }
 	  
 		return gatewayResponse;
@@ -53,10 +56,10 @@ public class PaymentGatewayImpl implements PaymentGateway {
 
 	    if (getService().PerformPurchase(request, response)) {
 	    	createSuccessResponse(gatewayResponse, response);
-	    	
+	    	System.out.println("Purchase success....response: " + response);
 	    } else {
-
 	    	createErrorResponse(gatewayResponse, response);
+	    	System.out.println("Purchase success....response: " + response);
 	    }
 	  
 		return gatewayResponse;

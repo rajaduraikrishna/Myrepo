@@ -8,7 +8,10 @@
  
    <context:component-scan base-package="com.v2.payment.service" />
    <bean id="paymentGateway" 
-                  class="com.v2.payment.gateway.rocketgate.PaymentGatewayImpl" />
+                  class="com.v2.payment.gateway.rocketgate.PaymentGatewayImpl" >
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="service" class="com.rocketgate.client.GatewayService"/>
  
  
 </beans>
