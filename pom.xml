@@ -29,6 +29,7 @@
 		<sonar.maven.plugin.version>2.0</sonar.maven.plugin.version>
 		<cobertura.maven.plugin.version>2.5.1</cobertura.maven.plugin.version>
     	<powermock.version>1.5.5</powermock.version>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
 		<finalName>payment</finalName>
